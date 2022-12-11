@@ -1,0 +1,42 @@
+/** scss variables
+ * Table of content:
+ * - 1. Media Sizes
+ * - 2. Colors
+ * - 2. Misc
+ * - 3. Spaces
+ */
+
+/** 1. Media Sizes
+ * --------------- */
+$breakpoints: ('xs': 480, 'sm': 768, 'md': 940, 'lg': 1200, 'xl': 1366);
+
+/** 2. Colors
+ * --------- */
+$colors-dark: ('primary': #3F59FD,
+	'secondary': #272333,
+	'body': #DEDDE0,
+	'heading': #F1F2F4,
+	'nav': #ffffff,
+	'badge': #272333,
+	'gradient': linear-gradient(274deg, #304CFD 11.94%, #3082FD 91.47%),
+	'background': #272333,
+	'card': #272333);
+$colors-light: ('primary': #304CFD,
+	'secondary': #FF965D,
+	'body': #5F6F81,
+	'heading': #44566C,
+	'nav': #5C7491,
+	'badge': #E9EDF0,
+	'gradient': linear-gradient(274deg, #304CFD 11.94%, #3082FD 91.47%),
+	'background': #ffffff,
+	'card': #F5F8F9);
+
+/** 2. Fonts
+ * --------- */
+$font-size-base: 15px;
+$flavor-radius: 50px;
+
+
+/** 2. Spaces
+ * ---------- */
+// $gutter: ('inner': )

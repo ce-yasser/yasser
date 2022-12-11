@@ -1,0 +1,20 @@
+:root {
+	--ys-font-size-base: $font-size-base;
+	--ys-line-height-base: 1.2;
+
+	@media (prefers-color-scheme: dark) {
+
+		@each $name,
+		$color in $colors-dark {
+			--ys-#{$name}-color: #{$color};
+		}
+	}
+
+	@media (prefers-color-scheme: light) {
+
+		@each $name,
+		$color in $colors-light {
+			--ys-#{$name}-color: #{$color};
+		}
+	}
+}

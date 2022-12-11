@@ -1,0 +1,19 @@
+/** Min Width Breakpoints
+ * ---------------------- */
+@mixin media-breakpoint-up($media: 'sm') {
+	$size: map-get($breakpoints, $media);
+
+	@media(min-width: #{$size}px) {
+		@content;
+	}
+}
+
+/** Max Width Breakpoints
+ * ---------------------- */
+@mixin media-breakpoint-down($media: 'sm') {
+	$size: map-get($breakpoints, $media) - 1;
+
+	@media(max-width: #{$size}px) {
+		@content;
+	}
+}

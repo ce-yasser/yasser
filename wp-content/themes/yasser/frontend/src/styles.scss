@@ -1,1 +1,38 @@
-/* You can add global styles to this file, and also import other style files */
+/**
+ * Begining of global style
+ * Table of content:
+ * - 1. Variables
+ * - 2. Functions
+ * - 3. Mixins
+ * - 4. Colors
+ * - 4. Reset
+ * - 5. Root
+ * - 6. Typography
+ * - 7. Grid
+ */
+
+/** 1. Variables
+ * ------------- */
+@import 'scss/variables';
+
+/** 2. Functions
+ * ------------- */
+
+/** 3. Mixins
+ * ----------- */
+@import 'scss/mixins/media';
+
+/** 4. Reset
+ * --------- */
+@import 'scss/reset';
+
+/** 5. Root
+ * -------- */
+@import 'scss/root';
+
+/** 6. Typography
+ * --------- */
+@import 'scss/typography';
+
+/** 7. Grid
+ * -------- */
