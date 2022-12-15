@@ -7,8 +7,4 @@ body {
 	font-size: 1rem;
 	color: var(--ys-body-color);
 	background-color: var(--ys-background-color);
-
-	@include media-breakpoint-down('xl') {
-		background-color: red;
-	}
 }

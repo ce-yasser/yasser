@@ -1,0 +1,19 @@
+.ys {
+	&-main {
+		padding: 80px 15px;
+		max-width: 1060px;
+		width: 100%;
+		margin: 0 auto;
+		display: flex;
+		flex-direction: column;
+		app-header {
+			align-self: flex-end;
+		}
+	}
+
+	&-wrapper {
+		background-color: var(--ys-content-bg-color);
+		border-radius: var(--ys-border-radius) 0 var(--ys-border-radius) var(--ys-border-radius);
+		padding: 40px;
+	}
+}

@@ -1,0 +1,9 @@
+.ys-header {
+	border-radius: var(--ys-border-radius) var(--ys-border-radius) var(--ys-border-radius) 0;
+	background-color: var(--ys-content-bg-color);
+
+	&__item {
+		color: var(--ys-nav-color);
+		text-decoration: none;
+	}
+}

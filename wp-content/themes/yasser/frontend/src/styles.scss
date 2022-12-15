@@ -13,7 +13,9 @@
 
 /** 1. Variables
  * ------------- */
-@import 'scss/variables';
+@import 'scss/variables/breakpoints';
+@import 'scss/variables/colors';
+@import 'scss/variables/misc';
 
 /** 2. Functions
  * ------------- */
