@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
+  routes: Array<{ name: string, url: string }> = [{
+    name: 'About',
+    url: '/'
+  }, {
+    name: 'Blog',
+    url: '/blog'
+  }];
 
 }

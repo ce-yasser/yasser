@@ -7,8 +7,30 @@
 :root {
 	/** 1. Fonts
 	 * --------- */
-	--ys-font-size-base: $font-size-base;
+	--ys-font-size-base: 15px;
 	--ys-line-height-base: 1.2;
+	--ys-font-family-body: 'Inter';
+	--ys-font-family-flavor: 'Merriweather';
+	--ys-font-family-serif: system-ui,
+	-apple-system,
+	"Segoe UI",
+	Roboto,
+	"Helvetica Neue",
+	Arial,
+	"Noto Sans",
+	"Liberation Sans",
+	sans-serif,
+	"Apple Color Emoji",
+	"Segoe UI Emoji",
+	"Segoe UI Symbol",
+	"Noto Color Emoji";
+
+	--ys-font-size-h1: 2.133rem; //32px
+	--ys-font-size-h2: 1.866rem; //28px
+	--ys-font-size-h3: 1.6rem; //24px
+	--ys-font-size-h4: 1.2rem; //18px
+	--ys-font-size-h5: 1.133rem; //17px
+	--ys-font-size-h6: 1.066rem; //16px
 
 	/** 2. Colors
 	 * --------- */

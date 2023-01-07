@@ -1,9 +1,21 @@
 .ys-header {
-	border-radius: var(--ys-border-radius) var(--ys-border-radius) var(--ys-border-radius) 0;
+	border-radius: var(--ys-border-radius) var(--ys-border-radius) 0 0;
 	background-color: var(--ys-content-bg-color);
+	padding: 20px 55px 10px;
+	display: flex;
+	align-items: center;
 
 	&__item {
+		font-size: var(--ys-font-size-h5);
 		color: var(--ys-nav-color);
 		text-decoration: none;
+		text-transform: uppercase;
+		padding: 10px 15px;
+		border-radius: 14px;
+		
+		&.active {
+			background-color: var(--ys-primary-color);
+			color: white;
+		}
 	}
 }

@@ -4,37 +4,42 @@
  * - 1. Variables
  * - 2. Functions
  * - 3. Mixins
- * - 4. Colors
- * - 4. Reset
- * - 5. Root
- * - 6. Typography
- * - 7. Grid
+ * - 4. Fonts
+ * - 5. Reset
+ * - 6. Root
+ * - 7. Typography
+ * - 8. Grid
  */
 
 /** 1. Variables
  * ------------- */
+@import 'scss/variables/misc';
 @import 'scss/variables/breakpoints';
 @import 'scss/variables/colors';
-@import 'scss/variables/misc';
 
 /** 2. Functions
  * ------------- */
+@import 'scss/functions';
 
 /** 3. Mixins
  * ----------- */
 @import 'scss/mixins/media';
 
-/** 4. Reset
+/** 4. Fonts
+ * --------- */
+@import 'scss/fonts';
+
+/** 5. Reset
  * --------- */
 @import 'scss/reset';
 
-/** 5. Root
+/** 6. Root
  * -------- */
 @import 'scss/root';
 
-/** 6. Typography
+/** 7. Typography
  * --------- */
 @import 'scss/typography';
 
-/** 7. Grid
+/** 8. Grid
  * -------- */
