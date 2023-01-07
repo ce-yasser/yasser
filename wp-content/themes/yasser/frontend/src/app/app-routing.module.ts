@@ -5,9 +5,10 @@ import { BlogComponent } from './pages/blog/blog.component';
 import { PostComponent } from './pages/post/post.component';
 
 const routes: Routes = [
-  { path: '', component: AboutComponent },
+  { path: '', component: AboutComponent, pathMatch: 'full' },
   { path: 'blog', component: BlogComponent },
   { path: 'blog/:slug', component: PostComponent }
+
 ];
 
 @NgModule({

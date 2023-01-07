@@ -1,4 +1,4 @@
 <header class="ys-header">
-	<a [routerLinkActiveOptions]="{ exact: true }" [routerLinkActive]="'active'" routerLink="{{route.url}}"
+	<a [routerLinkActiveOptions]="{ exact: route.match }" [routerLinkActive]="'active'" routerLink="{{route.url}}"
 		class="ys-header__item" *ngFor="let route of routes">{{route.name}}</a>
 </header>

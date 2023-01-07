@@ -4,13 +4,14 @@
 	padding: 20px 55px 10px;
 	display: flex;
 	align-items: center;
+	column-gap: 5px;
 
 	&__item {
 		font-size: var(--ys-font-size-h5);
 		color: var(--ys-nav-color);
 		text-decoration: none;
 		text-transform: uppercase;
-		padding: 10px 15px;
+		padding: 9px 15px;
 		border-radius: 14px;
 		
 		&.active {

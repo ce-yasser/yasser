@@ -1,11 +1,11 @@
 html {
 	font-size: var(--ys-font-size-base);
-	line-height: var(--ys-line-height-base);
-	font-family: var(--ys-font-family-body), var(--ys-font-family-serif);
 }
 
 body {
 	font-size: 1rem;
+	font-family: var(--ys-font-family-body), var(--ys-font-family-serif);
 	color: var(--ys-body-color);
 	background-color: var(--ys-background-color);
+	line-height: var(--ys-line-height-base);
 }
