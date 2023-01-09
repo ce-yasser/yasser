@@ -1,22 +1,95 @@
+@import "../../../scss/mixins/media.scss";
+
+$padding-top: 20px;
+$padding-bottom: 10px;
+
 .ys-header {
 	border-radius: var(--ys-border-radius) var(--ys-border-radius) 0 0;
 	background-color: var(--ys-content-bg-color);
-	padding: 20px 55px 10px;
+	padding-left: var(--ys-gutter);
+	position: relative;
 	display: flex;
+	justify-content: space-between;
 	align-items: center;
-	column-gap: 5px;
+
+	&__menu {
+		&.hideSm {
+			display: none;
+		}
+
+		@include media-breakpoint-up('sm') {
+			display: flex !important;
+			padding: $padding-top var(--ys-gutter) $padding-bottom 15px;
+			align-items: center;
+			column-gap: 5px;
+		}
+	}
+
+	&__logo {
+		padding: $padding-top 55px $padding-bottom 0;
+
+		@include media-breakpoint-up('sm') {
+			display: none;
+			&.showLogo {
+				display: block;
+			}
+		}
+	}
 
 	&__item {
 		font-size: var(--ys-font-size-h5);
 		color: var(--ys-nav-color);
 		text-decoration: none;
 		text-transform: uppercase;
-		padding: 9px 15px;
+		font-weight: 500;
+		padding: 9px 15px 8px;
 		border-radius: 14px;
-		
+		transition: 0.5s ease-out;
+
 		&.active {
 			background-color: var(--ys-primary-color);
 			color: white;
 		}
 	}
+
+	&:before,
+	&:after {
+		@include media-breakpoint-up('sm') {
+			content: '';
+			position: absolute;
+			left: 0;
+		}
+	}
+
+	&:before {
+		bottom: 0;
+		height: 50px;
+		width: 70px;
+		transform: translateX(-65px);
+		background-color: var(--ys-content-bg-color);
+	}
+
+	&:after {
+		top: 0;
+		width: 90px;
+		height: 100%;
+		border-bottom-right-radius: 70px;
+		transform: translateX(-80px);
+		background-color: var(--ys-background-color);
+	}
+
+	/** Begin: Burger button
+	 *  -------------------- */
+	&__trigger {
+		width: 70px;
+		height: 70px;
+		background-color: var(--ys-primary-color);
+		border-radius: 120px var(--ys-border-radius) 120px 120px;
+
+		@include media-breakpoint-up('sm') {
+			display: none;
+		}
+	}
+
+	/** End: Burger button **/
 }

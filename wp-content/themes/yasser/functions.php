@@ -1,10 +1,11 @@
 <?php
 
 function yasser_app_includes() {
-  wp_enqueue_script('main', get_template_directory_uri() . '/frontend/dist/frontend/main.js', array(), false, true);
-  wp_enqueue_script('polyfills', get_template_directory_uri() . '/frontend/dist/frontend/polyfills.js', array(), false, true);
-  wp_enqueue_script('runtime', get_template_directory_uri() . '/frontend/dist/frontend/runtime.js', array(), false, true);
-  wp_enqueue_style('styles', get_template_directory_uri() . '/frontend/dist/frontend/styles.css', array(), false, true);
+  $base_path = '/frontend/dist/frontend/';
+  wp_enqueue_script('main', get_template_directory_uri() . $base_path . 'main.js', array(), filemtime(get_theme_file_path($base_path . 'main.js')), true);
+  wp_enqueue_script('polyfills', get_template_directory_uri() . $base_path . 'polyfills.js', array(), filemtime(get_theme_file_path($base_path . 'polyfills.js')), true);
+  wp_enqueue_script('runtime', get_template_directory_uri() . $base_path . 'runtime.js', array(), filemtime(get_theme_file_path($base_path . 'runtime.js')), true);
+  wp_enqueue_style('yasser-styles', get_template_directory_uri() . $base_path . 'styles.css', array(), filemtime(get_theme_file_path($base_path . 'styles.css')), 'all');
 }
 add_action('wp_enqueue_scripts', 'yasser_app_includes');
 

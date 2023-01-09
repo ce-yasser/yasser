@@ -1,4 +1,10 @@
 <header class="ys-header">
-	<a [routerLinkActiveOptions]="{ exact: route.match }" [routerLinkActive]="'active'" routerLink="{{route.url}}"
-		class="ys-header__item" *ngFor="let route of routes">{{route.name}}</a>
+	<div class="ys-header__logo">Ahmed.Yasser</div>
+	<div class="ys-header__trigger" (click)="hideSm != hideSm">
+		<span class="ys-header__line"></span>
+	</div>
+	<div class="ys-header__menu" [ngClass]="{'hideSm': hideSm }">
+		<a [routerLinkActiveOptions]="{ exact: route.match }" [routerLinkActive]="'active'" routerLink="{{route.url}}"
+			class="ys-header__item" *ngFor="let route of routes">{{route.name}}</a>
+	</div>
 </header>

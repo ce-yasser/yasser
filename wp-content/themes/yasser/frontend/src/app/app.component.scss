@@ -1,3 +1,5 @@
+@import "../scss/mixins/media.scss";
+
 .ys {
 	&-main {
 		padding: 80px 15px;
@@ -6,14 +8,26 @@
 		margin: 0 auto;
 		display: flex;
 		flex-direction: column;
+
 		app-header {
+			width: 100%;
 			align-self: flex-end;
+
+			@include media-breakpoint-up('sm') {
+				width: auto;
+			}
+
 		}
 	}
 
 	&-wrapper {
 		background-color: var(--ys-content-bg-color);
-		border-radius: var(--ys-border-radius) 0 var(--ys-border-radius) var(--ys-border-radius);
-		padding: 40px;
+		border-radius: 0 0 var(--ys-border-radius) var(--ys-border-radius);
+		padding: var(--ys-gutter);
+
+		@include media-breakpoint-up('sm') {
+			border-top-left-radius: var(--ys-border-radius);
+		}
 	}
+
 }
