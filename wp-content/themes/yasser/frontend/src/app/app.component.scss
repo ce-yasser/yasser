@@ -12,8 +12,12 @@
 		app-header {
 			width: 100%;
 			align-self: flex-end;
+			position: sticky;
+			top: 0;
+			left: 0;
 
 			@include media-breakpoint-up('sm') {
+				position: static;
 				width: auto;
 			}
 

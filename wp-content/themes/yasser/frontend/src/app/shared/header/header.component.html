@@ -1,9 +1,15 @@
 <header class="ys-header">
-	<div class="ys-header__logo">Ahmed.Yasser</div>
-	<div class="ys-header__trigger" (click)="hideSm != hideSm">
-		<span class="ys-header__line"></span>
+	<div class="ys-header__logo">
+		<div style="background-color: var(--ys-secondary-color); font-weight: 900; color: white">Ahmed.Yasser</div>
 	</div>
-	<div class="ys-header__menu" [ngClass]="{'hideSm': hideSm }">
+	<div class="ys-header__trigger" [ngClass]="{'burgerActive': burgerActive}" (click)="burgerActive = !burgerActive">
+		<div class="ys-header__burger">
+			<span class="ys-header__line ys-header__line--top"></span>
+			<span class="ys-header__line ys-header__line--mid"></span>
+			<span class="ys-header__line ys-header__line--bot"></span>
+		</div>
+	</div>
+	<div class="ys-header__menu" [ngClass]="{'hideSm': !burgerActive}">
 		<a [routerLinkActiveOptions]="{ exact: route.match }" [routerLinkActive]="'active'" routerLink="{{route.url}}"
 			class="ys-header__item" *ngFor="let route of routes">{{route.name}}</a>
 	</div>

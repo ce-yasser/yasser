@@ -1,35 +1,82 @@
 @import "../../../scss/mixins/media.scss";
+@import "../../../scss/mixins/animate.scss";
 
 $padding-top: 20px;
 $padding-bottom: 10px;
+$lineHeight: 3px;
+$lineGap: 5px;
+$triggerHeight: 60px;
 
 .ys-header {
 	border-radius: var(--ys-border-radius) var(--ys-border-radius) 0 0;
 	background-color: var(--ys-content-bg-color);
 	padding-left: var(--ys-gutter);
 	position: relative;
+	z-index: 10;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 
 	&__menu {
+		position: absolute;
+		width: 100%;
+		top: 0;
+		right: 0;
+		display: flex;
+		flex-direction: column;
+		border-radius: 0 0 var(--ys-border-radius) var(--ys-border-radius);
+		z-index: -1;
+		overflow: hidden;
+		padding: ($triggerHeight + 10px) 0 30px var(--ys-gutter);
+
+		&:before {
+			content: '';
+			right: 0;
+			top: 0;
+			position: absolute;
+			border-radius: var(--ys-border-radius);
+			background-color: var(--ys-primary-color);
+			z-index: -1;
+			width: 0;
+			height: 0;
+			opacity: 1;
+			@include animate(fillIn, 0.2s);
+		}
+
 		&.hideSm {
 			display: none;
+
+			&:before {
+				opacity: 0;
+				width: 0;
+				height: 0;
+			}
 		}
 
 		@include media-breakpoint-up('sm') {
 			display: flex !important;
-			padding: $padding-top var(--ys-gutter) $padding-bottom 15px;
+			flex-direction: row;
 			align-items: center;
+			position: static;
+			padding: 0;
+			width: auto;
+			padding: $padding-top var(--ys-gutter) $padding-bottom 15px;
 			column-gap: 5px;
+			background-color: transparent;
+			border-radius: 0;
+
+			&:before {
+				display: none;
+			}
 		}
 	}
 
 	&__logo {
-		padding: $padding-top 55px $padding-bottom 0;
 
 		@include media-breakpoint-up('sm') {
 			display: none;
+			padding: $padding-top 55px $padding-bottom 0;
+
 			&.showLogo {
 				display: block;
 			}
@@ -38,17 +85,35 @@ $padding-bottom: 10px;
 
 	&__item {
 		font-size: var(--ys-font-size-h5);
-		color: var(--ys-nav-color);
+		color: white;
 		text-decoration: none;
 		text-transform: uppercase;
 		font-weight: 500;
-		padding: 9px 15px 8px;
-		border-radius: 14px;
+		padding: 13px 15px 12px 30px;
+		border-radius: 14px 0 0 14px;
 		transition: 0.5s ease-out;
 
+		@include media-breakpoint-down('sm') {
+			@for $i from 1 through 4 {
+				&:nth-child(#{$i}) {
+					@include animate(fadeInRight, 0.1s, $i * 0.1 + 0.2s);
+				}
+			}
+		}
+
+		@include media-breakpoint-up('sm') {
+			border-radius: 14px;
+			padding: 9px 15px 8px;
+			color: var(--ys-nav-color);
+		}
+
 		&.active {
-			background-color: var(--ys-primary-color);
-			color: white;
+			background-color: var(--ys-secondary-color);
+
+			@include media-breakpoint-up('sm') {
+				background-color: var(--ys-primary-color);
+				color: white;
+			}
 		}
 	}
 
@@ -81,14 +146,76 @@ $padding-bottom: 10px;
 	/** Begin: Burger button
 	 *  -------------------- */
 	&__trigger {
-		width: 70px;
-		height: 70px;
+		width: $triggerHeight;
+		height: $triggerHeight;
 		background-color: var(--ys-primary-color);
-		border-radius: 120px var(--ys-border-radius) 120px 120px;
+		border-radius: 140px var(--ys-border-radius) 140px 140px;
+		cursor: pointer;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		overflow: hidden;
 
 		@include media-breakpoint-up('sm') {
 			display: none;
 		}
+
+	}
+
+	&__burger {
+		position: relative;
+		width: 20px;
+		height: $lineHeight * 3+$lineGap * 2;
+	}
+
+
+	&__line {
+		position: absolute;
+		right: 0;
+		width: 100%;
+		height: $lineHeight;
+		border-radius: 2px;
+		background-color: white;
+		transition: 0.3s ease-out;
+
+		&--top {
+			top: 0;
+
+			.burgerActive & {
+				top: 8px;
+				transform: rotate(135deg);
+			}
+
+		}
+
+		&--mid {
+			width: 80%;
+			top: $lineHeight + $lineGap;
+
+			.burgerActive & {
+				opacity: 0;
+				right: -$triggerHeight;
+			}
+		}
+
+		&--bot {
+			top: ($lineHeight + $lineGap) * 2;
+
+
+			.burgerActive & {
+				top: 8px;
+				transform: rotate(-135deg);
+			}
+		}
+
+		&--bot,
+		&--top {
+			.burgerActive & {
+				top: 8px;
+				box-shadow: 0 0 3px 1px var(--ys-secondary-color)
+			}
+		}
+
 	}
 
 	/** End: Burger button **/

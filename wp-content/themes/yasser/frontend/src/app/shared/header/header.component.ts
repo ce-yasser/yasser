@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   routes: Array<{ name: string; url: string; match: boolean }> = [];
-  hideSm: boolean = true;
+  burgerActive: boolean = false;
   constructor() { }
 
   ngOnInit() {
