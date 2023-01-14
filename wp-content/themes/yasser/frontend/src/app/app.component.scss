@@ -1,4 +1,5 @@
 @import "../scss/mixins/media.scss";
+$content-width: 73%;
 
 .ys {
 	&-main {
@@ -8,29 +9,74 @@
 		margin: 0 auto;
 		display: flex;
 		flex-direction: column;
-
-		app-header {
-			width: 100%;
-			align-self: flex-end;
-			position: sticky;
-			top: 0;
-			left: 0;
-
-			@include media-breakpoint-up('sm') {
-				position: static;
-				width: auto;
-			}
-
-		}
 	}
 
 	&-wrapper {
 		background-color: var(--ys-content-bg-color);
 		border-radius: 0 0 var(--ys-border-radius) var(--ys-border-radius);
-		padding: var(--ys-gutter);
+		display: flex;
+		justify-content: flex-end;
+		position: relative;
+		z-index: 5;
 
 		@include media-breakpoint-up('sm') {
 			border-top-left-radius: var(--ys-border-radius);
+		}
+
+		.hideSidebar & {
+			border-top-left-radius: 0;
+
+		}
+	}
+
+	&-content {
+		flex-grow: 1;
+		padding: var(--ys-gutter);
+		background-color: var(--ys-content-bg-color);
+		max-width: $content-width;
+		min-height: calc(100vh - 231px);
+		transition: 0.4s ease-out;
+
+		.hideSidebar & {
+			max-width: 100%;
+		}
+	}
+
+}
+
+app-sidebar {
+	width: 27%;
+	background-color: var(--ys-card-color);
+	border-radius: var(--ys-border-radius);
+	transition: 0.3s ease-out;
+
+	.hideSidebar & {
+		position: absolute;
+		z-index: -1;
+		left: 0;
+		top: 0;
+		height: 100%;
+	}
+}
+
+app-header {
+	width: 100%;
+	align-self: flex-end;
+	position: sticky;
+	z-index: 100;
+	top: 0;
+	left: 0;
+
+	@include media-breakpoint-up('sm') {
+		position: relative;
+		width: auto;
+		display: flex;
+		justify-content: flex-end;
+		width: $content-width;
+		transition: 0.4s ease-out;
+
+		.hideSidebar & {
+			width: 100%;
 		}
 	}
 

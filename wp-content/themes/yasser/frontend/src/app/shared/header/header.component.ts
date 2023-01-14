@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
   routes: Array<{ name: string; url: string; match: boolean }> = [];
   burgerActive: boolean = false;
+  @Input() showLogo: boolean = false;
+  
   constructor() { }
 
   ngOnInit() {

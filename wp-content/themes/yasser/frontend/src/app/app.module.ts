@@ -9,6 +9,7 @@ import { PostCardComponent } from './components/post-card/post-card.component';
 import { BlogComponent } from './pages/blog/blog.component';
 import { PostComponent } from './pages/post/post.component';
 import { HeaderComponent } from './shared/header/header.component';
+import { SidebarComponent } from './shared/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { HeaderComponent } from './shared/header/header.component';
     BlogComponent,
     PostComponent,
     PostCardComponent,
-    HeaderComponent
+    HeaderComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,

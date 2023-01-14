@@ -1,9 +1,11 @@
-@mixin animate($name, $duration: '1s') {
+@mixin animate($name, $duration: '1s', $delay: '0s') {
 	animation-name: $name;
 	-webkit-animation-name: $name;
 	animation-duration: $duration;
 	-webkit-animation-duration: $duration;
 	animation-fill-mode: both;
+	animation-delay: $delay;
+	-webkit-animation-delay: $delay;
 }
 
 @-webkit-keyframes fadeInDown {

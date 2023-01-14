@@ -77,7 +77,7 @@ $triggerHeight: 60px;
 			display: none;
 			padding: $padding-top 55px $padding-bottom 0;
 
-			&.showLogo {
+			.showLogo & {
 				display: block;
 			}
 		}
@@ -91,19 +91,19 @@ $triggerHeight: 60px;
 		font-weight: 500;
 		padding: 13px 15px 12px 30px;
 		border-radius: 14px 0 0 14px;
-		transition: 0.5s ease-out;
 		@include animate(fadeInRight, 0.3s);
+		transition: 0.5s ease-out;
 
-		@include media-breakpoint-down('sm') {
-			@for $i from 1 through 4 {
-				&:nth-child(#{$i}) {
-					animation-delay: 0.15s * $i;
-					-webkit-animation-delay: 0.1s * $i;
-				}
+		@for $i from 1 through 4 {
+			&:nth-child(#{$i}) {
+				animation-delay: 0.15s * $i;
+				-webkit-animation-delay: 0.1s * $i;
 			}
 		}
 
 		@include media-breakpoint-up('sm') {
+			animation: none;
+			-webkit-animation: none;
 			border-radius: 14px;
 			padding: 9px 15px 8px;
 			color: var(--ys-nav-color);
@@ -119,30 +119,43 @@ $triggerHeight: 60px;
 		}
 	}
 
-	&:before,
-	&:after {
-		@include media-breakpoint-up('sm') {
+	@include media-breakpoint-up('sm') {
+
+		&:before,
+		&:after {
 			content: '';
 			position: absolute;
 			left: 0;
 		}
-	}
 
-	&:before {
-		bottom: 0;
-		height: 50px;
-		width: 70px;
-		transform: translateX(-65px);
-		background-color: var(--ys-content-bg-color);
-	}
+		&:before {
+			bottom: 0;
+			height: 50px;
+			width: 70px;
+			transform: translateX(-65px);
+			z-index: -1;
+			background-color: var(--ys-content-bg-color);
+			transition: 1.3s ease-out;
+		}
 
-	&:after {
-		top: 0;
-		width: 90px;
-		height: 100%;
-		border-bottom-right-radius: 70px;
-		transform: translateX(-80px);
-		background-color: var(--ys-background-color);
+		&:after {
+			top: 0;
+			width: 90px;
+			height: 100%;
+			border-bottom-right-radius: 70px;
+			transform: translateX(-80px);
+			background-color: var(--ys-background-color);
+		}
+
+
+		&.showLogo {
+			flex-grow: 1;
+
+			&:before,
+			&:after {
+				display: none;
+			}
+		}
 	}
 
 	/** Begin: Burger button
