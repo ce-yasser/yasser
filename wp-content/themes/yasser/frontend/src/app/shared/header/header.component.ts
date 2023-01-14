@@ -16,9 +16,17 @@ export class HeaderComponent implements OnInit {
       url: '/',
       match: true
     }, {
+      name: 'Resume',
+      url: '/resume',
+      match: true
+    }, {
       name: 'Blog',
       url: '/blog',
       match: false
+    }, {
+      name: 'Contact',
+      url: '/contact',
+      match: true
     }];
   }
 
